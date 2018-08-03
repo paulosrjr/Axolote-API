@@ -1,0 +1,62 @@
+{
+  "name": "axolote-api",
+  "version": "0.0.1",
+  "description": "Axolote-API is a dependency of Axolote. This projetc contains the interactions with tasks, database, auth and UI.",
+  "main": "index.js",
+  "scripts": {
+    "license": "cat LICENSE | more",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulosrjr/Axolote-API.git"
+  },
+  "keywords": [
+    "backup",
+    "cloud",
+    "restore",
+    "security",
+    "node",
+    "aws",
+    "azure",
+    "gce",
+    "google",
+    "softlayer",
+    "s3",
+    "container"
+  ],
+  "author": "Paulo Sergio <paulo@joho.com.br>",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/paulosrjr/Axolote-API/issues"
+  },
+  "homepage": "https://github.com/paulosrjr/Axolote-API#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "cluster": "^0.7.7",
+    "cookie-parser": "^1.4.3",
+    "debug": "^3.1.0",
+    "dredd": "^5.1.8",
+    "express": "^4.16.3",
+    "http-errors": "^1.6.3",
+    "jade": "^1.11.0",
+    "js-yaml": "^3.11.0",
+    "mocha": "^5.2.0",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.1.1",
+    "mongoose-paginate": "^5.0.3",
+    "node-celery": "^0.2.8",
+    "nodemon": "^1.17.5",
+    "pug": "^2.0.3",
+    "swagger-express": "^1.0.5",
+    "swagger-express-middleware": "^1.0.0-alpha.12"
+  },
+  "devDependencies": {
+    "frisby": "^2.0.16",
+    "grunt": "^1.0.2",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "jasmine": "^3.1.0",
+    "request": "^2.87.0"
+  }
+}

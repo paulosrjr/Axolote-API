@@ -1,0 +1,59 @@
+resourcePath: /servers
+description: Servers management
+apis: 
+- path: /
+  operations:
+
+  - httpMethod: POST
+    summary: Insert a server resource
+    notes: Returns a server body
+    responseClass: Server
+    nickname: server
+    consumes: 
+      - text/json
+    parameters:
+    - name: name
+      dataType: string
+      paramType: query
+      required: true
+      description: Server name
+    - name: address
+      dataType: string
+      paramType: query
+      required: true
+      description: Server address
+    - name: address_type
+      dataType: string
+      paramType: query
+      description: Server address type
+    - name: description
+      dataType: string
+      paramType: query
+      description: Server description
+    - name: environment
+      dataType: string
+      paramType: query
+      description: Server environment
+    - name: createddBy
+      dataType: string
+      paramType: query
+      description: Who created the server
+models:
+    Server:
+      id: Server
+      properties:
+        name:
+          type: String
+          required: true
+        address:
+          type: String
+          required: true
+        address_type:
+          type: String
+        description:
+          type: String
+        environment:
+          type: String
+        createddBy:
+          type: String
+

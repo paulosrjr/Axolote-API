@@ -1,0 +1,34 @@
+resourcePath: /works
+description: Works management
+apis: 
+- path: /
+  operations:
+
+  - httpMethod: POST
+    summary: Insert a work resource
+    notes: Returns a work body
+    responseClass: Work
+    nickname: work
+    consumes: 
+      - text/json
+    parameters:
+
+    - name: origin_path
+      dataType: string
+      paramType: query
+      required: true
+      description: Work origin_path
+
+    - name: destination_path
+      dataType: string
+      paramType: query
+      required: true
+      description: Work destination_path
+models:
+    Work:
+      id: Work
+      properties:
+        origin_path:
+          type: String
+        destination_path:
+          type: String    
