@@ -1,20 +1,17 @@
 from django.db import models
 
 
-class Group(models.Model):
+class WorkType(models.Model):
 
     class Meta:
 
-        db_table = 'group'
+        db_table = 'work_type'
 
     name = models.CharField(max_length=256)
+    command = models.TextField()
     deleted = models.BooleanField()
     createddBy = models.CharField(max_length=256)
     description = models.TextField()
-    environment = models.ForeignKey(
-        'Environment',
-        on_delete=models.PROTECT,
-    )
-    
+
     def __str__(self):
         return self.name

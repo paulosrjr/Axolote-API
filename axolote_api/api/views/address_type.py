@@ -1,17 +1,17 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
-from api.serializers import GroupSerializer
-from api.models import Group
+from api.serializers import AddressTypeSerializer
+from api.models import AddressType
 
 
-class GroupViewSet(viewsets.ViewSet):
+class AddressTypeSet(viewsets.ViewSet):
     """
-    API endpoint that allows servers to be viewed or edited.
+    API endpoint that allows addresstype to be viewed.
     """
     def list(self, request):
-        queryset = Group.objects.all()
-        serializer = GroupSerializer(queryset, many=True)
+        queryset = AddressType.objects.all()
+        serializer = AddressTypeSerializer(queryset, many=True)
         return Response(serializer.data)
 
     def create(self, request):

@@ -1,9 +1,8 @@
 from rest_framework import serializers
-from api.models import Server, Group
+from api.models import Parameter
 
 
-#class GroupSerializer(serializers.HyperlinkedModelSerializer):
-class GroupSerializer(serializers.ModelSerializer):
+class ParameterSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Group
+        model = Parameter
         fields = '__all__'

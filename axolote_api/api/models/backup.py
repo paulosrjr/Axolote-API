@@ -8,7 +8,6 @@ class Backup(models.Model):
         db_table = 'backup'
 
     name = models.CharField(max_length=256)
-    environment = models.CharField(max_length=256)
     deleted = models.BooleanField()
     createddBy = models.CharField(max_length=256)
     description = models.TextField()
@@ -23,6 +22,10 @@ class Backup(models.Model):
     )
     work_id = models.ForeignKey(
         'Work',
+        on_delete=models.PROTECT,
+    )
+    environment = models.ForeignKey(
+        'Environment',
         on_delete=models.PROTECT,
     )
 

@@ -1,17 +1,17 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
-from api.serializers import GroupSerializer
-from api.models import Group
+from api.serializers import ParameterSerializer
+from api.models import Parameter
 
 
-class GroupViewSet(viewsets.ViewSet):
+class ParameterViewSet(viewsets.ViewSet):
     """
-    API endpoint that allows servers to be viewed or edited.
+    API endpoint that allows parameter to be viewed or edited.
     """
     def list(self, request):
-        queryset = Group.objects.all()
-        serializer = GroupSerializer(queryset, many=True)
+        queryset = Parameter.objects.all()
+        serializer = ParameterSerializer(queryset, many=True)
         return Response(serializer.data)
 
     def create(self, request):

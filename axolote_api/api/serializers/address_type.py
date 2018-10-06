@@ -1,9 +1,8 @@
 from rest_framework import serializers
-from api.models import Server, Group
+from api.models import AddressType
 
 
-#class GroupSerializer(serializers.HyperlinkedModelSerializer):
-class GroupSerializer(serializers.ModelSerializer):
+class AddressTypeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Group
+        model = AddressType
         fields = '__all__'

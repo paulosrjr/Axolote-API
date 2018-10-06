@@ -1,9 +1,8 @@
 from rest_framework import serializers
-from api.models import Server, Group
+from api.models import Work
 
 
-#class GroupSerializer(serializers.HyperlinkedModelSerializer):
-class GroupSerializer(serializers.ModelSerializer):
+class WorkSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Group
+        model = Work
         fields = '__all__'

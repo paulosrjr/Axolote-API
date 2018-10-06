@@ -1,17 +1,17 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
-from api.serializers import BackupSerializer
-from api.models import Backup
+from api.serializers import WorkTypeSerializer
+from api.models import WorkType
 
 
-class BackupViewSet(viewsets.ViewSet):
+class WorkTypeViewSet(viewsets.ViewSet):
     """
-    API endpoint that allows backups to be viewed or created.
+    API endpoint that allows works to be viewed or edited.
     """
     def list(self, request):
-        queryset = Backup.objects.all()
-        serializer = BackupSerializer(queryset, many=True)
+        queryset = WorkType.objects.all()
+        serializer = WorkTypeSerializer(queryset, many=True)
         return Response(serializer.data)
 
     def create(self, request):
