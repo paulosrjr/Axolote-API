@@ -7,19 +7,26 @@ class Parameter(models.Model):
 
         db_table = 'parameter'
 
-    name = models.CharField(max_length=256)
-    address = models.CharField(max_length=256)
-    address_type = models.CharField(max_length=256)
+    name = models.CharField(max_length=256, blank=True, null=True)
+    value = models.TextField(
+        blank=True,
+        null=True
+    )
     deleted = models.BooleanField()
-    createddBy = models.CharField(max_length=256)
-    description = models.TextField()
-    group = models.ForeignKey(
+    createddBy = models.CharField(max_length=256, blank=True, null=True)
+    description = models.TextField(
+        blank=True,
+        null=True
+    )
+    group_id = models.ForeignKey(
         'Group',
         on_delete=models.PROTECT,
+        default=1
     )
-    environment = models.ForeignKey(
+    environment_id = models.ForeignKey(
         'Environment',
         on_delete=models.PROTECT,
+        default=1
     )
 
     def __str__(self):

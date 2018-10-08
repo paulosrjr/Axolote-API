@@ -17,12 +17,18 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
-from api.views import ServerViewSet, GroupViewSet
+from api.views import ServerViewSet, GroupViewSet, WorkViewSet, WorkTypeViewSet, BackupViewSet, AddressTypeViewSet, ParameterViewSet, EnvironmentViewSet
 
 # Create a router and register our viewsets with it.
 router = DefaultRouter()
-router.register(r'servers', ServerViewSet, base_name='servers')
+router.register(r'environments', EnvironmentViewSet, base_name='environments')
 router.register(r'groups', GroupViewSet, base_name='groups')
+router.register(r'servers', ServerViewSet, base_name='servers')
+router.register(r'works', WorkViewSet, base_name='works')
+router.register(r'works_types', WorkTypeViewSet, base_name='work_types')
+router.register(r'address_types', AddressTypeViewSet, base_name='address_types')
+router.register(r'backups', BackupViewSet, base_name='backups')
+router.register(r'parameters', ParameterViewSet, base_name='parameters')
 
 # The API URLs are now determined automatically by the router.
 urlpatterns = [

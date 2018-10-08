@@ -1,0 +1,8 @@
+- model: api.Group
+  pk: 1
+  fields:
+    name: "Default"
+    deleted: False
+    createddBy: "System"
+    description: "Default Group"
+    environment_id: "1"

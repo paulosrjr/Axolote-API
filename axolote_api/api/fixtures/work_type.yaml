@@ -1,0 +1,18 @@
+- model: api.WorkType
+  pk: 1
+  fields:
+    name: "Connection Test"
+    command: "test"
+    task: "actions.backup_executors.test"
+    deleted: False
+    createddBy: "System"
+    description: "Test task"
+- model: api.WorkType
+  pk: 2
+  fields:
+    name: "SCP"
+    command: "SCP"
+    task: "actions.backup_executors.scp"
+    deleted: False
+    createddBy: "System"
+    description: "Single SCP task"

@@ -1,17 +1,17 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
-from api.serializers import AddressTypeSerializer
-from api.models import AddressType
+from api.serializers import EnvironmentSerializer
+from api.models import Environment
 
 
-class AddressTypeViewSet(viewsets.ViewSet):
+class EnvironmentViewSet(viewsets.ViewSet):
     """
-    API endpoint that allows addresstype to be viewed.
+    API endpoint that allows environments to be viewed or edited.
     """
     def list(self, request):
-        queryset = AddressType.objects.all()
-        serializer = AddressTypeSerializer(queryset, many=True)
+        queryset = Environment.objects.all()
+        serializer = EnvironmentSerializer(queryset, many=True)
         return Response(serializer.data)
 
     def create(self, request):

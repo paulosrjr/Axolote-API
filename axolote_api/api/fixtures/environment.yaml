@@ -1,0 +1,7 @@
+- model: api.Environment
+  pk: 1
+  fields:
+    name: "Default"
+    deleted: False
+    createddBy: "System"
+    description: "Default Environment"
