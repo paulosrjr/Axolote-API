@@ -7,6 +7,8 @@ from api.models import Server, Group, Environment
 
 class TestServer(TestCase):
     fixtures = ['api/fixtures/group.yaml', 'api/fixtures/environment.yaml',]
+    call_command('loaddata', 'api/fixtures/group.yaml', verbosity=0)
+    call_command('loaddata', 'api/fixtures/environment.yaml', verbosity=0)
     def setUp(self):
         self.my_group = mommy.make(Group,
                                 name='MyGroup',
@@ -18,8 +20,6 @@ class TestServer(TestCase):
                                 deleted=False,
                                 createddBy='Tester',
                                 description='My Test')
-        call_command('loaddata', 'api/fixtures/group.yaml', verbosity=0)
-        call_command('loaddata', 'api/fixtures/environment.yaml', verbosity=0)
         self.my_server = mommy.make(Server,
                                  name='MyServer',
                                  address='myserver.corp',
